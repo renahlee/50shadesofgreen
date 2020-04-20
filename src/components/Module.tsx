@@ -39,8 +39,9 @@ export const Module: React.FC<ModuleProps> = ({
       }
       {heading.toLowerCase()}</Heading>
 
-    {sections.map((section: any) => <Section
+    {sections.map((section: TSection) => <Section
       {...section}
+      index={!!index ? index + 1 : 0}
     >
     </Section>)}
   </Box>

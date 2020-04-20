@@ -1,24 +1,34 @@
 {
   "files": {
-    "main.css": "/50shadesofgreen/static/css/main.7257a236.chunk.css",
-    "main.js": "/50shadesofgreen/static/js/main.4e3a754f.chunk.js",
-    "main.js.map": "/50shadesofgreen/static/js/main.4e3a754f.chunk.js.map",
+    "main.css": "/50shadesofgreen/static/css/main.655187f5.chunk.css",
+    "main.js": "/50shadesofgreen/static/js/main.21adde29.chunk.js",
+    "main.js.map": "/50shadesofgreen/static/js/main.21adde29.chunk.js.map",
     "runtime-main.js": "/50shadesofgreen/static/js/runtime-main.4fd97fac.js",
     "runtime-main.js.map": "/50shadesofgreen/static/js/runtime-main.4fd97fac.js.map",
-    "static/js/2.09bae304.chunk.js": "/50shadesofgreen/static/js/2.09bae304.chunk.js",
-    "static/js/2.09bae304.chunk.js.map": "/50shadesofgreen/static/js/2.09bae304.chunk.js.map",
+    "static/js/2.96931779.chunk.js": "/50shadesofgreen/static/js/2.96931779.chunk.js",
+    "static/js/2.96931779.chunk.js.map": "/50shadesofgreen/static/js/2.96931779.chunk.js.map",
     "index.html": "/50shadesofgreen/index.html",
-    "precache-manifest.d1d66656ad9813c5808af0de7e9efe9a.js": "/50shadesofgreen/precache-manifest.d1d66656ad9813c5808af0de7e9efe9a.js",
+    "precache-manifest.abacc07529b53f72cc5c982d40fe9fb2.js": "/50shadesofgreen/precache-manifest.abacc07529b53f72cc5c982d40fe9fb2.js",
     "service-worker.js": "/50shadesofgreen/service-worker.js",
-    "static/css/main.7257a236.chunk.css.map": "/50shadesofgreen/static/css/main.7257a236.chunk.css.map",
-    "static/js/2.09bae304.chunk.js.LICENSE.txt": "/50shadesofgreen/static/js/2.09bae304.chunk.js.LICENSE.txt",
+    "static/css/main.655187f5.chunk.css.map": "/50shadesofgreen/static/css/main.655187f5.chunk.css.map",
+    "static/js/2.96931779.chunk.js.LICENSE.txt": "/50shadesofgreen/static/js/2.96931779.chunk.js.LICENSE.txt",
+    "static/media/Figure1_1.png": "/50shadesofgreen/static/media/Figure1_1.6e004a1f.png",
     "static/media/Figure3_15.png": "/50shadesofgreen/static/media/Figure3_15.1be00a33.png",
+    "static/media/Figure3_21.png": "/50shadesofgreen/static/media/Figure3_21.7a88e93f.png",
+    "static/media/Figure3_23.png": "/50shadesofgreen/static/media/Figure3_23.a49ccc5d.png",
+    "static/media/Figure3_25.png": "/50shadesofgreen/static/media/Figure3_25.037703dd.png",
+    "static/media/Figure3_27.png": "/50shadesofgreen/static/media/Figure3_27.d73ede9c.png",
+    "static/media/Figure3_28.png": "/50shadesofgreen/static/media/Figure3_28.1e74e6c2.png",
+    "static/media/Figure3_29.png": "/50shadesofgreen/static/media/Figure3_29.6ad8e627.png",
+    "static/media/Figure3_30.png": "/50shadesofgreen/static/media/Figure3_30.140cd425.png",
+    "static/media/Figure3_31.png": "/50shadesofgreen/static/media/Figure3_31.0999da7e.png",
+    "static/media/Figure3_32.png": "/50shadesofgreen/static/media/Figure3_32.c7896b2f.png",
     "static/media/App.css": "/50shadesofgreen/static/media/NanumGothic-Regular.3cbe9257.ttf"
   },
   "entrypoints": [
     "static/js/runtime-main.4fd97fac.js",
-    "static/js/2.09bae304.chunk.js",
-    "static/css/main.7257a236.chunk.css",
-    "static/js/main.4e3a754f.chunk.js"
+    "static/js/2.96931779.chunk.js",
+    "static/css/main.655187f5.chunk.css",
+    "static/js/main.21adde29.chunk.js"
   ]
 }

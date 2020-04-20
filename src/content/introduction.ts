@@ -1,5 +1,7 @@
 import { ModuleProps as TModule } from "../components/Module";
 
+import Figure1_1 from "../static/Figure1_1.png";
+
 export const Introduction: TModule = {
   heading: "Introduction",
   sections: [
@@ -11,11 +13,11 @@ export const Introduction: TModule = {
       ]
     },
     {
-      image: "data",
-      imagePos: "left",
+      image: Figure1_1,
       imageCaption: "12 Classes of Plants - Input Images",
       imageDescription:
-        "Black-Grass, Charlock, Cleavers, Common Chickweed, Common Wheat, Fat Hen, Loose Silky-Bent, Maize, Scentless Mayweed, Shepherd’s Purse, Small-Flowered Cranesbill, Sugar Beet (left to right; top to bottom)"
+        "Black-Grass, Charlock, Cleavers, Common Chickweed, Common Wheat, Fat Hen, Loose Silky-Bent, Maize, Scentless Mayweed, Shepherd’s Purse, Small-Flowered Cranesbill, Sugar Beet (left to right; top to bottom)",
+      imageWidth: "60%"
     },
     {
       text: [

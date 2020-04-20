@@ -1,5 +1,24 @@
 import { ModuleProps as TModule } from "../components/Module";
+import Figure3_1 from "../static/Figure3_1.png";
+import Figure3_2 from "../static/Figure3_2.png";
+// import Figure3_3 from "../static/Figure3_3.png";
+import Figure3_4 from "../static/Figure3_4.png";
+// import Figure3_5 from "../static/Figure3_5.png";
+import Figure3_6 from "../static/Figure3_6.png";
+import Figure3_7 from "../static/Figure3_7.png";
+import Figure3_8 from "../static/Figure3_8.png";
+import Figure3_9 from "../static/Figure3_9.png";
+import Figure3_10 from "../static/Figure3_10.png";
+import Figure3_11 from "../static/Figure3_11.png";
+import Figure3_12 from "../static/Figure3_12.png";
+import Figure3_13 from "../static/Figure3_13.png";
+import Figure3_14 from "../static/Figure3_14.png";
 import Figure3_15 from "../static/Figure3_15.png";
+import Figure3_16 from "../static/Figure3_16.png";
+import Figure3_17 from "../static/Figure3_17.png";
+import Figure3_18 from "../static/Figure3_18.png";
+import Figure3_19 from "../static/Figure3_19.png";
+import Figure3_20 from "../static/Figure3_20.png";
 import Figure3_21 from "../static/Figure3_21.png";
 import Figure3_23 from "../static/Figure3_23.png";
 import Figure3_25 from "../static/Figure3_25.png";
@@ -20,11 +39,11 @@ export const Results: TModule = {
       ]
     },
     {
-      image: "1",
+      image: Figure3_1,
       imageCaption: "12 Classes of Plants - Segmented Images",
       imageDescription:
         "Black-Grass, Charlock, Cleavers, Common Chickweed, Common Wheat, Fat Hen, Loose Silky-Bent, Maize, Scentless Mayweed, Shepherd’s Purse, Small-Flowered Cranesbill, Sugar Beet (left to right; top to bottom)",
-      imagePos: "left"
+      imageWidth: "60%"
     },
     {
       text: [
@@ -33,18 +52,17 @@ export const Results: TModule = {
       ]
     },
     {
-      image: "2",
+      image: Figure3_2,
       imageCaption: "Elbow Method for RGB Quantization",
       imageDescription:
         "These representative results indicate an optimal *k*-value in the range [3,6].",
-      imagePos: "left"
+      imageWidth: "60%"
     },
     {
       image: "3",
       imageCaption: "Results of RGB Quantization",
       imageDescription:
-        "The loss of the plant body and confusion with the background consistently occurs for plant bodies that are sparse",
-      imagePos: "left"
+        "The loss of the plant body and confusion with the background consistently occurs for plant bodies that are sparse"
     },
     {
       text: [
@@ -52,11 +70,11 @@ export const Results: TModule = {
       ]
     },
     {
-      image: "4",
+      image: Figure3_4,
       imageCaption: "Elbow Method for Hue Quantization",
       imageDescription:
         "These representative results indicate an optimal k-value in the range [3,6].",
-      imagePos: "left"
+      imageWidth: "60%"
     },
     {
       image: "5",
@@ -66,10 +84,11 @@ export const Results: TModule = {
       imagePos: "left"
     },
     {
-      image: "6",
+      image: Figure3_6,
       imageCaption: "RGB/HSV Time Ratio",
       imageDescription: "HSV quantization is multiple times faster.",
-      imagePos: "left"
+      imagePos: "left",
+      imageWidth: "60%"
     },
     {
       text: [
@@ -79,14 +98,14 @@ export const Results: TModule = {
       ]
     },
     {
-      image: "7",
+      image: Figure3_7,
       imageCaption: "Representative Weed (Black Grass)",
       imageDescription:
         "Silhouette analysis of the image indicates a sparse plant body within the image with a best k-value of 3.",
       imagePos: "left"
     },
     {
-      image: "8",
+      image: Figure3_8,
       imageCaption: "Representative Crop (Maize)",
       imageDescription:
         "Silhouette analysis of the image indicates a sparse plant body within the image with a best k-value of 4."
@@ -100,7 +119,7 @@ export const Results: TModule = {
       ]
     },
     {
-      image: "9",
+      image: Figure3_9,
       imageCaption: "Sample (Black-grass)",
       imageDescription:
         "Original image, thresholding, initial k-means, k-means after thresholding (left to right)"
@@ -112,11 +131,11 @@ export const Results: TModule = {
       ]
     },
     {
-      image: "10",
+      image: Figure3_10,
       imageCaption: "Background leakage due to hue similarity"
     },
     {
-      image: "11",
+      image: Figure3_11,
       imageCaption:
         "Absence of plant pixels due to hue similarity; inaccurate plant pixel identification"
     },
@@ -126,16 +145,16 @@ export const Results: TModule = {
       ]
     },
     {
-      image: "12",
+      image: Figure3_12,
       imageCaption:
         "Sugar beet - clipping from low light/underexposure; loss of features from blurriness"
     },
     {
-      image: "13",
+      image: Figure3_13,
       imageCaption: "Cleavers - ridged edges due to blurriness "
     },
     {
-      image: "14",
+      image: Figure3_14,
       imageCaption: "Maize - ridged edges due to low light / low contrast"
     },
     {
@@ -150,7 +169,7 @@ export const Results: TModule = {
         "Blurry, zoomed-in, with container; blurry, zoomed-in, inter-plant occlusion;\nzoomed-out, dense foliage; blurry, zoomed-in"
     },
     {
-      image: "16",
+      image: Figure3_16,
       imageCaption: "Black-grass - variance in image content and conditions",
       imageDescription:
         "Zoomed-out, with white ruler; blurry, zoomed-in;\nsparse plant pixels, with white ruler; blurry, zoomed-in"
@@ -161,13 +180,13 @@ export const Results: TModule = {
       ]
     },
     {
-      image: "17",
+      image: Figure3_17,
       imageCaption: "Cascading Segmentation: Black Grass",
       imageDescription:
         "Hue-quantization, followed by RGB-quantization successfully suppressed background."
     },
     {
-      image: "18",
+      image: Figure3_18,
       imageCaption: "Cascading Segmentation: Cleavers",
       imageDescription:
         "Hue-quantization, followed by RGB-quantization produced holes."
@@ -180,12 +199,14 @@ export const Results: TModule = {
       ]
     },
     {
-      image: "19",
-      imageCaption: "Representative RGB Histogram"
+      image: Figure3_19,
+      imageCaption: "Representative RGB Histogram",
+      imageWidth: "60%"
     },
     {
-      image: "20",
-      imageCaption: "Representative Grayscale Histogram"
+      image: Figure3_20,
+      imageCaption: "Representative Grayscale Histogram",
+      imageWidth: "60%"
     },
     {
       text: [
@@ -222,7 +243,7 @@ export const Results: TModule = {
       ]
     },
     {
-      image: "25",
+      image: Figure3_25,
       imageCaption: "Random Forest (Binary) Metrics"
     },
     {

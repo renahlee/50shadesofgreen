@@ -9,19 +9,19 @@ export type SectionProps = {
   imagePos?: "left" | "right" | "center"
   imageWidth?: string
   imageDescription?: string
+  index?: number
   list?: string[]
   subtitle?: string
   text?: string[]
   title?: string
 }
 
-export const Section: React.FC<any> = ({ image, imageCaption, imageWidth, imagePos, text }) =>
+export const Section: React.FC<SectionProps> = ({ image, imageCaption, imageWidth, imagePos, index, text }) =>
   <Box
     maxWidth="40rem"
   >
     {
-      !!image &&
-      imagePos !== "right" &&
+      !!image && imagePos !== "right" &&
       <Box
         mb={3}
         width="100%"
@@ -31,12 +31,14 @@ export const Section: React.FC<any> = ({ image, imageCaption, imageWidth, imageP
           width={['100%', imageWidth || "100%"]}
           height="100%"
           mr={[0, 0, 2]}
+          mt={3}
         />
         <Text
           color={theme.colors.grey}
-          fontSize="0.8em"
+          fontSize="0.7em"
+          fontStyle="italic"
           mt={1}
-        >{imageCaption}</Text>
+        > {imageCaption}</Text>
       </Box>
     }
 
