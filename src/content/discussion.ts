@@ -1,0 +1,29 @@
+import { ModuleProps as TModule } from "../components/Module";
+
+export const Discussion: TModule = {
+  heading: "Discussion",
+  sections: [
+    {
+      text: [
+        "For the use-case in which fast and accurate responses are crucial for effective application of pesticides, our research focused on developing models that can accurately classify plant bodies.",
+        "## 🌱 Image segmentation",
+        "Hue-quantized image segmentation provides a fast and effective method of isolating plant bodies from background.  Whereas prior work focused on a combination of soft-assignment clustering with Expectation Maximization (EM) and computer vision techniques like generalized Hough transforms and watershed segmentation, our work produces reliably segmented images at a much faster rate.  For over 96% of the images we segmented from the dataset, our results showed clear plant body segmentation and suppression of background pixels.",
+        "The quality of the input image heavily impacted the segmentation product.  However, any product deployed in the field would be able to be trained upon a consistent set of images, given that the mechanical devices employed would be uniformly similar.  Furthermore, in comparison to standard quantization within RGB-space, our method provides some amount of illumination-invariance.",
+        "## 🌱 Supervised classification",
+        "The random forest classifier performs about the same as the published models on this dataset. However it performs worse when using the segmented images. The most potential with this model would be for classifying between crops and weeds because that is where it had its best performance. With further work on the parameters and features, the performance could be enhanced.",
+        "The difference in performance between the segmented and unsegmented images shows that there is lost information when the segmentation is performed. The random forest model was more sensitive to this loss, dropping .07 in average precision while the neural networks model only dropped 3%. Perhaps this is due to the features used in the model simply being histograms of the red, green, blue and grayscale values.",
+        "The advantage of the random forest model is that its training time is much quicker than the neural networks classifier. However, it takes a serious hit in performance, except in one class. It outperforms neural networks in the Loose Silky-bent class significantly. In the unsegmented dataset, there is a 12% difference in precision. This class somehow benefits from the histogram features and indicates that perhaps a combination of these models could further boost performance.",
+        "Both of the neural network classifiers outperform all published models on this unaugmented dataset by a significant margin (to the best of our knowledge). Further hyperparameter tuning would likely yield further improvements.",
+        "The juxtaposition of these models clearly demonstrate that the unsegmented model is basing some aspects of its predictions on information present in the background of the images. The background information accounts for a 3% change in overall accuracy and affected every class except Small-flowered Cranesbill. Common Wheat and Maize were affected particularly strongly. The recall of common wheat predictions dropped from 1.0 to 0.9 and the precision of Maize dropped from 1.0 to 0.904.",
+        "Overall, the hyperparameter configuration, downsampled dataset, and transfer learning from weights trained on the ImageNet dataset results in models that strike a good balance between reasonable training times and high classification accuracies.",
+        "## 🌱 Future work",
+        "While our segmentation pipeline successfully extracts plant body pixels from background on most images, our model could stand to improve upon extracting semantic meaning from the images.  For example, while the pipeline produces a single mask upon all plant body pixels, it would be useful to extract individual leaves and stems to determine plant body geometry and structure.",
+        "One possible avenue for future work would involve using edge detection, such as with Sobel filters or Canny Edge Detector, since edge images represent a higher level of abstraction.  In addition, edges are feature invariant to absolute illumination. This could reduce overfitting of classifiers to one particular lighting condition.  Edge detection in combination with gradient convolutions would allow for calculating relative orientations of the leaves and stems.",
+        "Another possible avenue to explore is to cascade-segment upon different features within HSV space, such as saturation values in order to reduce noise.  Similarly, noise removal filtering with Wiener filters could also reduce overall noise.",
+        "For the random forest classification, further work can be done with feature extraction. The key to a good random forest classifier is good features. The histograms we used are a solid foundation that can be expanded upon. Other measures of the images could be found and used to help differentiate them.",
+        "Further work is needed to assess the quality of the CNN-based classifiers. In order to test how well these models generalize, a new test set should be constructed that consists of seedling images of the 12 species that were not taken in the controlled environment of the Aarhaus University labs. The impact of different backgrounds and viewing angles on prediction quality must be considered before applying these classifiers to any practical problems.",
+        "One possible avenue to improve model performance for both the unsegmented and segmented models is a cascading classifier. This classifier consists of several trained neural networks that progressively discriminate an image into increasingly granular classes."
+      ]
+    }
+  ]
+};

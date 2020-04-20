@@ -5,8 +5,9 @@ import theme from '../theme'
 
 export type SectionProps = {
   image?: string
-  imagePos?: "left" | "right" | "center"
   imageCaption?: string
+  imagePos?: "left" | "right" | "center"
+  imageWidth?: string
   imageDescription?: string
   list?: string[]
   subtitle?: string
@@ -14,7 +15,7 @@ export type SectionProps = {
   title?: string
 }
 
-export const Section: React.FC<any> = ({ image, imageCaption, imagePos, text }) =>
+export const Section: React.FC<any> = ({ image, imageCaption, imageWidth, imagePos, text }) =>
   <Box
     maxWidth="40rem"
   >
@@ -23,10 +24,11 @@ export const Section: React.FC<any> = ({ image, imageCaption, imagePos, text }) 
       imagePos !== "right" &&
       <Box
         mb={3}
+        width="100%"
       >
         <Image
           src={image}
-          width="100%"
+          width={['100%', imageWidth || "100%"]}
           height="100%"
           mr={[0, 0, 2]}
         />
@@ -49,7 +51,7 @@ export const Section: React.FC<any> = ({ image, imageCaption, imagePos, text }) 
       imagePos === "right" &&
       <Image
         src={image}
-        width="100%"
+        width={['100%', imageWidth || "100%"]}
         height="100%"
         ml={[0, 0, 2]}
         mt={[3, 0, 0]}

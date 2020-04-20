@@ -1,5 +1,14 @@
 import { ModuleProps as TModule } from "../components/Module";
 import Figure3_15 from "../static/Figure3_15.png";
+import Figure3_21 from "../static/Figure3_21.png";
+import Figure3_23 from "../static/Figure3_23.png";
+import Figure3_25 from "../static/Figure3_25.png";
+import Figure3_27 from "../static/Figure3_27.png";
+import Figure3_28 from "../static/Figure3_28.png";
+import Figure3_29 from "../static/Figure3_29.png";
+import Figure3_30 from "../static/Figure3_30.png";
+import Figure3_31 from "../static/Figure3_31.png";
+import Figure3_32 from "../static/Figure3_32.png";
 
 export const Results: TModule = {
   heading: "Results and Analysis",
@@ -177,6 +186,98 @@ export const Results: TModule = {
     {
       image: "20",
       imageCaption: "Representative Grayscale Histogram"
+    },
+    {
+      text: [
+        "For the normal images and the segmented images, there are 203 images from each class used in the training and 50 from each class used in the testing. For the crops and weeds classification there are 606 images in the crops training set, 630 in the weeds training set, 150 in the crops testing set, and 153 in the weeds testing set.",
+        "In terms of the hyperparameters for the model, there are 100 trees in the forest, each with a max depth of 25.  The number of features at which to look when considering the best split is the square root of the total number of features. These parameters were chosen to generate the best results from the model.",
+        "The model had an overall precision of 0.84. However there were some standout classes that had a very high precision. The model achieved a 0.96 precision for the common chickweed class and 0.93 for the Shepherd Purse class, with the lowest precision for the loose silky-bent class at 0.72. It takes approximately 1.31 seconds to train the model.",
+        "In terms of time performance, the entire model takes about 1.31 seconds to train.  This is predominated by feature extraction time, which totaled 9.22 seconds over the entire domain of images."
+      ]
+    },
+    {
+      image: Figure3_21,
+      imageCaption: "Random Forest (Unsegmented) Metrics"
+    },
+    {
+      image: "22",
+      imageCaption: "Random Forest (Unsegmented) Metrics"
+    },
+    {
+      text: [
+        "In contrast, training upon segmented images resulted in a lowered precision score: 0.77."
+      ]
+    },
+    {
+      image: Figure3_23,
+      imageCaption: "Random Forest (Unsegmented) Metrics"
+    },
+    {
+      image: "24",
+      imageCaption: "Random Forest (Unsegmented) Metrics"
+    },
+    {
+      text: [
+        "Training a binary classifier to distinguish between weeds and crops yielded much higher precision and recall."
+      ]
+    },
+    {
+      image: "25",
+      imageCaption: "Random Forest (Binary) Metrics"
+    },
+    {
+      image: "26",
+      imageCaption: "Random Forest (Binary) Confusion Matrix"
+    },
+    {
+      text: [
+        "### Neural network classifier",
+        "For our neural network classifier, the changes in accuracy and loss over the training process for the unsegmented training and validation sets:"
+      ]
+    },
+    {
+      image: Figure3_27,
+      imageCaption: "Neural Network (Unsegmented) Accuracy and Loss",
+      imagePos: "right",
+      imageWidth: "60%"
+    },
+    {
+      text: [
+        "The changes in accuracy and loss over the training process for the segmented training and validation sets:"
+      ]
+    },
+    {
+      image: Figure3_28,
+      imageCaption: "Neural Network (Segmented) Accuracy and Loss",
+      imagePos: "right",
+      imageWidth: "60%"
+    },
+    {
+      text: [
+        "For both models, one epoch took about 63-37 seconds. Consequently, the unsegmented model trained for roughly 40 minutes and the segmented model trained for about 25 minutes. Test images took 366 ms to generate a prediction, so the 600 images in the test set were classified in 3 minutes, 40 seconds.",
+        "The model trained on unsegmented images performed very well on the test set. An overall accuracy of 94.7% was achieved. The best classes, Charlock and Small-flowered Cranesbill were classified perfectly, with no false positives nor false negatives. The worst classes, Black-grass and Loose Silky-bent performed similarly with F1-scores of 0.752 and 0.768 respectively. The three cash crops all performed above average with Sugar Beet attaining an F1-score of 0.99."
+      ]
+    },
+    {
+      image: Figure3_29,
+      imageCaption: "Neural Network (Unsegmented) Metrics"
+    },
+    {
+      image: Figure3_30,
+      imageCaption: "Neural Network (Unsegmented) Confusion Matrix"
+    },
+    {
+      text: [
+        "The model trained on segmented images also performed well on the test set, though not as well as the unsegmented model. An overall accuracy of 91.7% was achieved. Only Small-flowered Cranesbill was classified perfectly, with no false positives nor false negatives. Charlock achieved a perfect precision, but a single false negative led to a recall of 0.98. The worst classes were again Black-grass and Loose Silky-bent with F1-scores of 0.674 and 0.727 respectively. Black-grass suffered from an increase in false negatives while Loose Silky-bent had an increase in false positives. The three cash crops maintained their above average performance with Sugar Beet attaining the highest F1-score of 0.95."
+      ]
+    },
+    {
+      image: Figure3_31,
+      imageCaption: "Neural network (Segmented) Metrics"
+    },
+    {
+      image: Figure3_32,
+      imageCaption: "Neural Network (Segmented) Confusion Matrix"
     }
   ]
 };

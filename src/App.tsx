@@ -7,14 +7,16 @@ import theme from './theme'
 import {
   Introduction,
   Methodology,
-  Results
+  Results,
+  Discussion
 } from './content'
 
 
 const modules = [
   Introduction,
   Methodology,
-  Results
+  Results,
+  Discussion
 ] as const
 
 const App = () => {
