@@ -21,7 +21,7 @@ export const Module: React.FC<ModuleProps> = ({
   >
     <Heading
       color={theme.colors.lightgreen}
-      fontFamily="serif"
+      fontFamily="Nanum Gothic"
       fontWeight="normal"
       fontSize="3rem"
       display="inline-block"
@@ -39,7 +39,7 @@ export const Module: React.FC<ModuleProps> = ({
       }
       {heading.toLowerCase()}</Heading>
 
-    {sections.map(section => <Section
+    {sections.map((section: any) => <Section
       {...section}
     >
     </Section>)}
