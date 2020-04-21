@@ -7,7 +7,6 @@ import { ModuleProps as TModule } from './Module'
 export type SectionProps = {
   image?: string
   imageCaption?: string
-  imagePos?: "left" | "right" | "center"
   imagePrefix?: TModule["imagePrefix"]
   imageSuffix?: number
   imageWidth?: string
@@ -25,13 +24,13 @@ export const Section: React.FC<SectionProps> = ({
   imagePrefix,
   imageSuffix,
   imageWidth,
-  imagePos,
   text
 }) => {
   const LabelledImage = () =>
     <Flex
       flexDirection="column"
       justifyContent="center"
+      mt={4}
       mb={3}
       height="auto"
       width={['100%', imageWidth || "100%"]}
@@ -39,7 +38,6 @@ export const Section: React.FC<SectionProps> = ({
       <Image
         src={image}
         mr={[0, 0, 2]}
-        mt={3}
       />
       <Text
         color={theme.colors.grey}
@@ -50,9 +48,9 @@ export const Section: React.FC<SectionProps> = ({
       > <span>{`Figure ${imagePrefix}.${imageSuffix}:`}</span>{imageCaption}</Text>
       <Text
         color={theme.colors.grey}
-        fontSize="0.65em"
+        fontSize="0.8em"
         mt={1}
-        textAlign={imageDescription && imageDescription.length > 120 ? "left" : "center"}
+        textAlign={imageDescription && imageDescription.length > 100 ? "left" : "center"}
       >
         <ReactMarkdown
           source={imageDescription}
@@ -68,7 +66,7 @@ export const Section: React.FC<SectionProps> = ({
     width="100%"
   >
     {
-      !!image && imagePos !== "right"
+      !!image
       && <LabelledImage />
     }
 
@@ -76,10 +74,6 @@ export const Section: React.FC<SectionProps> = ({
       !!text && text.map(t =>
         <ReactMarkdown source={t} />
       )
-    }
-
-    {!!image && imagePos === "right"
-      && <LabelledImage />
     }
 
   </Flex>

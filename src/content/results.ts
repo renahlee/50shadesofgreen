@@ -20,8 +20,11 @@ import Figure3_18 from "../static/Figure3_18.png";
 import Figure3_19 from "../static/Figure3_19.png";
 import Figure3_20 from "../static/Figure3_20.png";
 import Figure3_21 from "../static/Figure3_21.png";
+import Figure3_22 from "../static/Figure3_22.png";
 import Figure3_23 from "../static/Figure3_23.png";
+import Figure3_24 from "../static/Figure3_24.png";
 import Figure3_25 from "../static/Figure3_25.png";
+import Figure3_26 from "../static/Figure3_26.png";
 import Figure3_27 from "../static/Figure3_27.png";
 import Figure3_28 from "../static/Figure3_28.png";
 import Figure3_29 from "../static/Figure3_29.png";
@@ -36,7 +39,7 @@ export const Results: TModule = {
     {
       text: [
         "## 🌱 Unsupervised segmentation",
-        "In general, unsupervised segmentation produced high-quality results.  In the following sections, we will go over the specific results of our experiments, as well as discuss our strategies for problematic outliers."
+        "In general, unsupervised segmentation produced high-quality results. In the following sections, we will go over the specific results of our experiments, as well as discuss our strategies for problematic outliers."
       ]
     },
     {
@@ -49,7 +52,7 @@ export const Results: TModule = {
     {
       text: [
         "### RGB vs. HSV",
-        "Initial naive clustering within RGB-space allowed for determining the optimal number of centers using the elbow method which resulted in a consistent range of cluster numbers k=\\[3,6\\] for all weeds and cash crops within the dataset."
+        "Initial naive clustering within RGB-space allowed for determining the optimal number of centers using the elbow method and resulted in a consistent range of cluster numbers k=\\[3,6\\] for all weeds and cash crops within the dataset."
       ]
     },
     {
@@ -63,11 +66,12 @@ export const Results: TModule = {
       image: Figure3_3,
       imageCaption: "Results of RGB Quantization",
       imageDescription:
-        "The loss of the plant body and confusion with the background consistently occurs for plant bodies that are sparse"
+        "The loss of the plant body and confusion with the background consistently occurs for plant bodies that are sparse",
+      imageWidth: "70%"
     },
     {
       text: [
-        "Similarly, applying the elbow method to hue-quantization within HSV-space produced the same optimal number of cluster centers as with RGB-space, but with much lower loss values."
+        "Similarly, applying the elbow method to hue-quantization within HSV-space produced the same number of cluster center optima as with RGB-space, but with much lower loss values."
       ]
     },
     {
@@ -82,7 +86,7 @@ export const Results: TModule = {
       imageCaption: "Results of Hue Quantization",
       imageDescription:
         "The plant body is retained, as the hue information for the plant body is more likely to be a centroid for clustering.",
-      imagePos: "left"
+      imageWidth: "70%"
     },
     {
       text: [
@@ -93,14 +97,13 @@ export const Results: TModule = {
       image: Figure3_6,
       imageCaption: "RGB/HSV Time Ratio",
       imageDescription: "HSV quantization is multiple times faster.",
-      imagePos: "left",
       imageWidth: "60%"
     },
     {
       text: [
-        "Segmentation using the “optimal” k-range for RGB-quantization assigns the plant body to background centroids for images in which plant body pixels are sparse.  This is particularly egregious for “grass”-type plant bodies (See Figure 3.2).  However, hue-quantization doesn’t suffer from these issues (See Figure 3.3).  Therefore, we decided to primarily use hue-quantization moving forward.",
-        "### Finding Optimal *k*",
-        "In order to determine the best *k*-value for each image, we calculate the silhouette score of each pixel with respect to its cluster label and determine the average over all observations.  This was conducted with respect to the hue feature.  Then, we pick the number of clusters associated with the silhouette score closest to 1.  In Figures 3.6 and 3.7, we plot each observation’s silhouette value within its assigned cluster."
+        "Segmentation using the “optimal” k-range for RGB-quantization assigns the plant body to background centroids for images in which plant body pixels are sparse. This is particularly egregious for “grass”-type plant bodies (Figure 3.2). However, hue-quantization doesn’t suffer from these issues (Figure 3.3). Therefore, we decided to primarily use hue-quantization moving forward.",
+        "### Finding optimal *k*",
+        "In order to determine the best *k*-value for each image, we calculate the silhouette score of each pixel with respect to its cluster label and determine the average over all observations. This was conducted with respect to the hue feature. Then, we pick the number of clusters associated with the silhouette score closest to 1. In Figures 3.6 and 3.7, we plot each observation’s silhouette value within its assigned cluster."
       ]
     },
     {
@@ -108,27 +111,29 @@ export const Results: TModule = {
       imageCaption: "Representative Weed (Black Grass)",
       imageDescription:
         "Silhouette analysis of the image indicates a sparse plant body within the image with a best *k*-value of 3.",
-      imagePos: "left"
+      imageWidth: "70%"
     },
     {
       image: Figure3_8,
       imageCaption: "Representative Crop (Maize)",
       imageDescription:
-        "Silhouette analysis of the image indicates a sparse plant body within the image with a best *k*-value of 4."
+        "Silhouette analysis of the image indicates a sparse plant body within the image with a best *k*-value of 4.",
+      imageWidth: "70%"
     },
     {
       text: [
         "We can see that both the shape of the curve, as well as the average value, correspond to the quality of the cluster assignment. This process requires downsampling the image to reasonable observation size (n <= 10&#x2074;), but leads to reasonable performance prior to segmentation. We can qualitatively assess the validity of our cluster number determination with segmentation results implemented with non-green suppression.",
         "### Thresholding and cascaded segmentation",
         "With the initial set of results from *k*-means, segmented images had varying levels of background and noise present. Given that *k*-means converges toward local minima, we employ thresholding to mitigate potential assignment of white pixels as centers.",
-        "Determined through tuning representative samples of 15 then 50 images, the white threshold values ranged from \\[120, 120, 120\\] to \\[180, 180, 180\\] and were suppressed as black pixels. Values chosen were largely influenced by illuminance, hue similarity between the background and leaves, and qualitative results from the representative samples. One might have assumed that the values were closer to [255, 255, 255] but as brightness is perceived in a relative fashion, the threshold optima point to underexposure or low light conditions."
+        "Determined through tuning representative samples of 15 then 50 images, the white threshold values ranged from \\[120, 120, 120\\] to \\[180, 180, 180\\] and were suppressed as black pixels. Values chosen were largely influenced by illuminance, hue similarity between the background and leaves, and qualitative results from the representative samples. One might have assumed that the values were closer to \\[255, 255, 255\\] but as brightness is perceived in a relative fashion, the threshold optima point to underexposure or low light conditions."
       ]
     },
     {
       image: Figure3_9,
       imageCaption: "Sample (Black-grass)",
       imageDescription:
-        "Original image, thresholding, initial *k*-means, *k*-means after thresholding (left to right)"
+        "Original image, thresholding, initial *k*-means, *k*-means after thresholding (left to right)",
+      imageWidth: "70%"
     },
     {
       text: [
@@ -138,12 +143,14 @@ export const Results: TModule = {
     },
     {
       image: Figure3_10,
-      imageCaption: "Background leakage due to hue similarity"
+      imageCaption: "Background leakage due to hue similarity",
+      imageWidth: "70%"
     },
     {
       image: Figure3_11,
       imageCaption:
-        "Absence of plant pixels due to hue similarity; inaccurate plant pixel identification"
+        "Absence of plant pixels due to hue similarity; inaccurate plant pixel identification",
+      imageWidth: "70%"
     },
     {
       text: [
@@ -153,15 +160,18 @@ export const Results: TModule = {
     {
       image: Figure3_12,
       imageCaption:
-        "Sugar beet - clipping from low light/underexposure; loss of features from blurriness"
+        "Sugar beet - clipping from low light/underexposure; loss of features from blurriness",
+      imageWidth: "70%"
     },
     {
       image: Figure3_13,
-      imageCaption: "Cleavers - ridged edges due to blurriness "
+      imageCaption: "Cleavers - ridged edges due to blurriness ",
+      imageWidth: "70%"
     },
     {
       image: Figure3_14,
-      imageCaption: "Maize - ridged edges due to low light / low contrast"
+      imageCaption: "Maize - ridged edges due to low light / low contrast",
+      imageWidth: "70%"
     },
     {
       text: [
@@ -172,13 +182,15 @@ export const Results: TModule = {
       image: Figure3_15,
       imageCaption: "Maize - ridged edges due to low light / low contrast",
       imageDescription:
-        "Blurry, zoomed-in, with container; blurry, zoomed-in, inter-plant occlusion;\nzoomed-out, dense foliage; blurry, zoomed-in"
+        "Blurry, zoomed-in, with container; blurry, zoomed-in, inter-plant occlusion;\nzoomed-out, dense foliage; blurry, zoomed-in",
+      imageWidth: "70%"
     },
     {
       image: Figure3_16,
       imageCaption: "Black-grass - variance in image content and conditions",
       imageDescription:
-        "Zoomed-out, with white ruler; blurry, zoomed-in;\nsparse plant pixels, with white ruler; blurry, zoomed-in"
+        "Zoomed-out, with white ruler; blurry, zoomed-in;\nsparse plant pixels, with white ruler; blurry, zoomed-in",
+      imageWidth: "70%"
     },
     {
       text: [
@@ -189,18 +201,21 @@ export const Results: TModule = {
       image: Figure3_17,
       imageCaption: "Cascading Segmentation: Black Grass",
       imageDescription:
-        "Hue-quantization, followed by RGB-quantization successfully suppressed background."
+        "Hue-quantization, followed by RGB-quantization successfully suppressed background.",
+      imageWidth: "65%"
     },
     {
       image: Figure3_18,
       imageCaption: "Cascading Segmentation: Cleavers",
       imageDescription:
-        "Hue-quantization, followed by RGB-quantization produced holes."
+        "Hue-quantization, followed by RGB-quantization produced holes.",
+      imageWidth: "65%"
     },
     {
       text: [
         "## 🌱 Supervised classification",
         "### Random forest results",
+        "For the random forest model we created features of histograms. Each bin of each histogram then becomes a feature. We created different histograms of the red, green, blue and grayscale values. Four one dimensional histograms: one for each of the RGB channels and one for the grayscale channel. Then three multidimensional histograms are created: one for all three channels of RGB, one for the red/green channels and one for the blue/green channels.",
         "Feature creation results in 2688 bins, most of which will not provide any information for the model, requiring a reduction in feature space. The top 200 features are selected using the ANOVA F-value between the label and the feature for a classification task. Due to the features just being different bins in different histograms, it is hard to distinguish which 200 bins are used because the function does not return anything that is labeled. The model itself will also return values for the importance of features but due to not being able to keep track of which bins are being used this information is not valuable. It takes approximately 9.22 seconds to extract the features."
       ]
     },
@@ -217,9 +232,9 @@ export const Results: TModule = {
     {
       text: [
         "For the normal images and the segmented images, there are 203 images from each class used in the training and 50 from each class used in the testing. For the crops and weeds classification there are 606 images in the crops training set, 630 in the weeds training set, 150 in the crops testing set, and 153 in the weeds testing set.",
-        "In terms of the hyperparameters for the model, there are 100 trees in the forest, each with a max depth of 25.  The number of features at which to look when considering the best split is the square root of the total number of features. These parameters were chosen to generate the best results from the model.",
-        "The model had an overall precision of 0.84. However there were some standout classes that had a very high precision. The model achieved a 0.96 precision for the common chickweed class and 0.93 for the Shepherd Purse class, with the lowest precision for the loose silky-bent class at 0.72. It takes approximately 1.31 seconds to train the model.",
-        "In terms of time performance, the entire model takes about 1.31 seconds to train.  This is predominated by feature extraction time, which totaled 9.22 seconds over the entire domain of images."
+        "In terms of the hyperparameters for the model, there are 100 trees in the forest, each with a max depth of 25.  The number of features at which to look when considering the best split is the square root of the total number of features. These parameters were chosen to generate the best results from the model. The model was then trained on the dataset in three different ways: with the normal images, with the segmented images, and with the images divided in only two classes, crops and weeds.",
+        "The model had an overall precision of 0.84. However there were some standout classes that had a very high precision. The model achieved a 0.96 precision for the common chickweed class and 0.93 for the Shepherd's Purse class, with the lowest precision for the loose silky-bent class at 0.72. It takes approximately 1.31 seconds to train the model.",
+        "In terms of time performance, the entire model takes about 1.31 seconds to train. This is predominated by feature extraction time, which totaled 9.22 seconds over the entire domain of images."
       ]
     },
     {
@@ -227,8 +242,9 @@ export const Results: TModule = {
       imageCaption: "Random Forest (Unsegmented) Metrics"
     },
     {
-      image: "22",
-      imageCaption: "Random Forest (Unsegmented) Confusion Matrix"
+      image: Figure3_22,
+      imageCaption: "Random Forest (Unsegmented) Confusion Matrix",
+      imageWidth: "80%"
     },
     {
       text: [
@@ -240,8 +256,9 @@ export const Results: TModule = {
       imageCaption: "Random Forest (Unsegmented) Metrics"
     },
     {
-      image: "24",
-      imageCaption: "Random Forest (Segmented) Confusion Matrix"
+      image: Figure3_24,
+      imageCaption: "Random Forest (Segmented) Confusion Matrix",
+      imageWidth: "80%"
     },
     {
       text: [
@@ -254,8 +271,9 @@ export const Results: TModule = {
       imageWidth: "80%"
     },
     {
-      image: "26",
-      imageCaption: "Random Forest (Binary) Confusion Matrix"
+      image: Figure3_26,
+      imageCaption: "Random Forest (Binary) Confusion Matrix",
+      imageWidth: "40%"
     },
     {
       text: [
@@ -266,7 +284,6 @@ export const Results: TModule = {
     {
       image: Figure3_27,
       imageCaption: "Neural Network (Unsegmented) Accuracy and Loss",
-      imagePos: "right",
       imageWidth: "60%"
     },
     {
@@ -277,7 +294,6 @@ export const Results: TModule = {
     {
       image: Figure3_28,
       imageCaption: "Neural Network (Segmented) Accuracy and Loss",
-      imagePos: "right",
       imageWidth: "60%"
     },
     {
@@ -292,7 +308,8 @@ export const Results: TModule = {
     },
     {
       image: Figure3_30,
-      imageCaption: "Neural Network (Unsegmented) Confusion Matrix"
+      imageCaption: "Neural Network (Unsegmented) Confusion Matrix",
+      imageWidth: "80%"
     },
     {
       text: [
@@ -305,7 +322,8 @@ export const Results: TModule = {
     },
     {
       image: Figure3_32,
-      imageCaption: "Neural Network (Segmented) Confusion Matrix"
+      imageCaption: "Neural Network (Segmented) Confusion Matrix",
+      imageWidth: "80%"
     }
   ]
 };

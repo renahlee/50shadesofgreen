@@ -9,6 +9,7 @@ import {
   Methodology,
   Results,
   Discussion,
+  Conclusion,
   Sources
 } from './content'
 
@@ -18,7 +19,8 @@ const modules = [
   Methodology,
   Results,
   Discussion,
-  Sources
+  Conclusion,
+  Sources,
 ] as const
 
 const App = () => {

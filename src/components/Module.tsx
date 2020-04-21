@@ -37,7 +37,8 @@ export const Module: React.FC<ModuleProps> = ({
       fontSize="3rem"
       display="inline-block"
     >
-      {index !== 0 && index !== 4
+      {
+        ![0, 4, 5].some(_ => _ === index)
         && <Text
           color={theme.colors.lightgrey}
           display="inline-block"
