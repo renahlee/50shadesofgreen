@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "cf02bee2d0c97c0ea11f7876c6bab2c5",
+    "revision": "876ab26d8b83bd249374e0ddec9a9c1d",
     "url": "/50shadesofgreen/index.html"
   },
   {
-    "revision": "c1cc4471b79763732067",
+    "revision": "c980a7e34aaba0c54735",
     "url": "/50shadesofgreen/static/css/main.3af7fc06.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/50shadesofgreen/static/js/2.0010ab22.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "c1cc4471b79763732067",
-    "url": "/50shadesofgreen/static/js/main.7cdc6cab.chunk.js"
+    "revision": "c980a7e34aaba0c54735",
+    "url": "/50shadesofgreen/static/js/main.d8fd7d67.chunk.js"
   },
   {
     "revision": "ede66c2f25f781452cd0",
