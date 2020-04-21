@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/50shadesofgreen/static/css/main.3af7fc06.chunk.css",
-    "main.js": "/50shadesofgreen/static/js/main.d8fd7d67.chunk.js",
-    "main.js.map": "/50shadesofgreen/static/js/main.d8fd7d67.chunk.js.map",
+    "main.js": "/50shadesofgreen/static/js/main.f274dff6.chunk.js",
+    "main.js.map": "/50shadesofgreen/static/js/main.f274dff6.chunk.js.map",
     "runtime-main.js": "/50shadesofgreen/static/js/runtime-main.4fd97fac.js",
     "runtime-main.js.map": "/50shadesofgreen/static/js/runtime-main.4fd97fac.js.map",
     "static/js/2.0010ab22.chunk.js": "/50shadesofgreen/static/js/2.0010ab22.chunk.js",
     "static/js/2.0010ab22.chunk.js.map": "/50shadesofgreen/static/js/2.0010ab22.chunk.js.map",
     "index.html": "/50shadesofgreen/index.html",
-    "precache-manifest.0154bd4574b13b4a12d172e89d1ddfd7.js": "/50shadesofgreen/precache-manifest.0154bd4574b13b4a12d172e89d1ddfd7.js",
+    "precache-manifest.b9ce04bad4df742cc94a110578fcf992.js": "/50shadesofgreen/precache-manifest.b9ce04bad4df742cc94a110578fcf992.js",
     "service-worker.js": "/50shadesofgreen/service-worker.js",
     "static/css/main.3af7fc06.chunk.css.map": "/50shadesofgreen/static/css/main.3af7fc06.chunk.css.map",
     "static/js/2.0010ab22.chunk.js.LICENSE.txt": "/50shadesofgreen/static/js/2.0010ab22.chunk.js.LICENSE.txt",
@@ -55,6 +55,6 @@
     "static/js/runtime-main.4fd97fac.js",
     "static/js/2.0010ab22.chunk.js",
     "static/css/main.3af7fc06.chunk.css",
-    "static/js/main.d8fd7d67.chunk.js"
+    "static/js/main.f274dff6.chunk.js"
   ]
 }
