@@ -4,12 +4,9 @@
 }
 
 body {
-  /* background: black; */
   margin: 0;
   padding: 0;
-  font-family: -apple-system, "Nanum Gothic";
-  /* Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
-    "Helvetica Neue", sans-serif; */
+  font-family: -apple-system, "Nanum Gothic", sans-serif;
 }
 
 h2 {
@@ -27,18 +24,60 @@ h3 {
 p {
   color: #838389;
   font-size: 0.8em;
+  line-height: 1.6em;
+}
+
+a {
+  color: #4a7856;
+  text-decoration: none;
+}
+
+strong {
+  color: #4a7856;
+}
+
+span {
+  color: #4a7856;
+  font-weight: bold;
+  margin-right: 8px;
+  text-transform: uppercase;
+}
+
+ol:not(:last-child) {
+  margin: 32px 0;
+}
+
+ol:not(:last-child) li {
+  color: #838389;
+  font-size: 1em;
+  line-height: 2em;
+  counter-increment: list;
+  margin-left: -1.4em;
+  padding-inline-start: 1em;
+}
+
+ol:not(:last-child) li:before {
+  color: #c8d5b9;
+  content: counter(list) ".";
+  left: -32px;
+  position: absolute;
+  text-align: right;
+  width: 26px;
 }
 
 ol li {
-  color: #4a7856;
+  color: #838389;
   font-size: 0.8em;
+  line-height: 1.5em;
   counter-increment: list;
   list-style-type: none;
   position: relative;
+  margin-left: -1.8em;
+  padding-inline-start: 1em;
 }
 
 ol li:before {
-  color: #838389;
+  color: #c2c2c2;
   content: counter(list) ".";
   left: -32px;
   position: absolute;

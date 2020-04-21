@@ -1,9 +1,9 @@
 import { ModuleProps as TModule } from "../components/Module";
 import Figure3_1 from "../static/Figure3_1.png";
 import Figure3_2 from "../static/Figure3_2.png";
-// import Figure3_3 from "../static/Figure3_3.png";
+import Figure3_3 from "../static/Figure3_3.png";
 import Figure3_4 from "../static/Figure3_4.png";
-// import Figure3_5 from "../static/Figure3_5.png";
+import Figure3_5 from "../static/Figure3_5.png";
 import Figure3_6 from "../static/Figure3_6.png";
 import Figure3_7 from "../static/Figure3_7.png";
 import Figure3_8 from "../static/Figure3_8.png";
@@ -31,6 +31,7 @@ import Figure3_32 from "../static/Figure3_32.png";
 
 export const Results: TModule = {
   heading: "Results and Analysis",
+  imagePrefix: "3",
   sections: [
     {
       text: [
@@ -48,18 +49,18 @@ export const Results: TModule = {
     {
       text: [
         "### RGB vs. HSV",
-        "Initial naive clustering within RGB-space allowed for determining the optimal number of centers using the elbow method which resulted in a consistent range of cluster numbers k=[3,6] for all weeds and cash crops within the dataset."
+        "Initial naive clustering within RGB-space allowed for determining the optimal number of centers using the elbow method which resulted in a consistent range of cluster numbers k=\\[3,6\\] for all weeds and cash crops within the dataset."
       ]
     },
     {
       image: Figure3_2,
       imageCaption: "Elbow Method for RGB Quantization",
       imageDescription:
-        "These representative results indicate an optimal *k*-value in the range [3,6].",
+        "These representative results indicate an optimal *k*-value in the range \\[3,6\\].",
       imageWidth: "60%"
     },
     {
-      image: "3",
+      image: Figure3_3,
       imageCaption: "Results of RGB Quantization",
       imageDescription:
         "The loss of the plant body and confusion with the background consistently occurs for plant bodies that are sparse"
@@ -73,15 +74,20 @@ export const Results: TModule = {
       image: Figure3_4,
       imageCaption: "Elbow Method for Hue Quantization",
       imageDescription:
-        "These representative results indicate an optimal k-value in the range [3,6].",
+        "These representative results indicate an optimal *k*-value in the range \\[3,6\\].",
       imageWidth: "60%"
     },
     {
-      image: "5",
+      image: Figure3_5,
       imageCaption: "Results of Hue Quantization",
       imageDescription:
         "The plant body is retained, as the hue information for the plant body is more likely to be a centroid for clustering.",
       imagePos: "left"
+    },
+    {
+      text: [
+        "We also measured the time performance of both quantization methods."
+      ]
     },
     {
       image: Figure3_6,
@@ -94,35 +100,35 @@ export const Results: TModule = {
       text: [
         "Segmentation using the “optimal” k-range for RGB-quantization assigns the plant body to background centroids for images in which plant body pixels are sparse.  This is particularly egregious for “grass”-type plant bodies (See Figure 3.2).  However, hue-quantization doesn’t suffer from these issues (See Figure 3.3).  Therefore, we decided to primarily use hue-quantization moving forward.",
         "### Finding Optimal *k*",
-        "In order to determine the best k-value for each image, we calculate the silhouette score of each pixel with respect to its cluster label and determine the average over all observations.  This was conducted with respect to the hue feature.  Then, we pick the number of clusters associated with the silhouette score closest to 1.  In Figures 3.6 and 3.7, we plot each observation’s silhouette value within its assigned cluster."
+        "In order to determine the best *k*-value for each image, we calculate the silhouette score of each pixel with respect to its cluster label and determine the average over all observations.  This was conducted with respect to the hue feature.  Then, we pick the number of clusters associated with the silhouette score closest to 1.  In Figures 3.6 and 3.7, we plot each observation’s silhouette value within its assigned cluster."
       ]
     },
     {
       image: Figure3_7,
       imageCaption: "Representative Weed (Black Grass)",
       imageDescription:
-        "Silhouette analysis of the image indicates a sparse plant body within the image with a best k-value of 3.",
+        "Silhouette analysis of the image indicates a sparse plant body within the image with a best *k*-value of 3.",
       imagePos: "left"
     },
     {
       image: Figure3_8,
       imageCaption: "Representative Crop (Maize)",
       imageDescription:
-        "Silhouette analysis of the image indicates a sparse plant body within the image with a best k-value of 4."
+        "Silhouette analysis of the image indicates a sparse plant body within the image with a best *k*-value of 4."
     },
     {
       text: [
         "We can see that both the shape of the curve, as well as the average value, correspond to the quality of the cluster assignment. This process requires downsampling the image to reasonable observation size (n <= 10&#x2074;), but leads to reasonable performance prior to segmentation. We can qualitatively assess the validity of our cluster number determination with segmentation results implemented with non-green suppression.",
         "### Thresholding and cascaded segmentation",
-        "With the initial set of results from k-means, segmented images had varying levels of background and noise present. Given that k-means converges toward local minima, we employ thresholding to mitigate potential assignment of white pixels as centers.",
-        "Determined through tuning representative samples of 15 then 50 images, the white threshold values ranged from [120, 120, 120] to [180, 180, 180] and were suppressed as black pixels. Values chosen were largely influenced by illuminance, hue similarity between the background and leaves, and qualitative results from the representative samples. One might have assumed that the values were closer to [255, 255, 255] but as brightness is perceived in a relative fashion, the threshold optima point to underexposure or low light conditions."
+        "With the initial set of results from *k*-means, segmented images had varying levels of background and noise present. Given that *k*-means converges toward local minima, we employ thresholding to mitigate potential assignment of white pixels as centers.",
+        "Determined through tuning representative samples of 15 then 50 images, the white threshold values ranged from \\[120, 120, 120\\] to \\[180, 180, 180\\] and were suppressed as black pixels. Values chosen were largely influenced by illuminance, hue similarity between the background and leaves, and qualitative results from the representative samples. One might have assumed that the values were closer to [255, 255, 255] but as brightness is perceived in a relative fashion, the threshold optima point to underexposure or low light conditions."
       ]
     },
     {
       image: Figure3_9,
       imageCaption: "Sample (Black-grass)",
       imageDescription:
-        "Original image, thresholding, initial k-means, k-means after thresholding (left to right)"
+        "Original image, thresholding, initial *k*-means, *k*-means after thresholding (left to right)"
     },
     {
       text: [
@@ -176,7 +182,7 @@ export const Results: TModule = {
     },
     {
       text: [
-        "Similarly, an attempt to run images through two passes of k-means yielded mixed results. As shown in Figure 3.17 and 3.18, this approach proved capable of both successfully isolating plant pixels and faring worse than a single k-means pass without suppression."
+        "Similarly, an attempt to run images through two passes of *k*-means yielded mixed results. As shown in Figure 3.17 and 3.18, this approach proved capable of both successfully isolating plant pixels and faring worse than a single *k*-means pass without suppression."
       ]
     },
     {
@@ -201,12 +207,12 @@ export const Results: TModule = {
     {
       image: Figure3_19,
       imageCaption: "Representative RGB Histogram",
-      imageWidth: "60%"
+      imageWidth: "50%"
     },
     {
       image: Figure3_20,
       imageCaption: "Representative Grayscale Histogram",
-      imageWidth: "60%"
+      imageWidth: "50%"
     },
     {
       text: [
@@ -222,7 +228,7 @@ export const Results: TModule = {
     },
     {
       image: "22",
-      imageCaption: "Random Forest (Unsegmented) Metrics"
+      imageCaption: "Random Forest (Unsegmented) Confusion Matrix"
     },
     {
       text: [
@@ -235,7 +241,7 @@ export const Results: TModule = {
     },
     {
       image: "24",
-      imageCaption: "Random Forest (Unsegmented) Metrics"
+      imageCaption: "Random Forest (Segmented) Confusion Matrix"
     },
     {
       text: [
@@ -244,7 +250,8 @@ export const Results: TModule = {
     },
     {
       image: Figure3_25,
-      imageCaption: "Random Forest (Binary) Metrics"
+      imageCaption: "Random Forest (Binary) Metrics",
+      imageWidth: "80%"
     },
     {
       image: "26",

@@ -8,7 +8,8 @@ import {
   Introduction,
   Methodology,
   Results,
-  Discussion
+  Discussion,
+  Sources
 } from './content'
 
 
@@ -16,7 +17,8 @@ const modules = [
   Introduction,
   Methodology,
   Results,
-  Discussion
+  Discussion,
+  Sources
 ] as const
 
 const App = () => {
@@ -41,8 +43,7 @@ const App = () => {
       {modules.map((module, index) =>
         <Module
           index={index}
-          heading={module.heading}
-          sections={module.sections}
+          {...module}
         />
       )}
     </Box>

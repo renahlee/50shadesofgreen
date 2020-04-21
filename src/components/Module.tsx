@@ -7,16 +7,27 @@ import theme from '../theme'
 export type ModuleProps = {
   heading: string
   index?: number
+  imagePrefix?: string
   sections: TSection[]
 }
 
 
 export const Module: React.FC<ModuleProps> = ({
   heading,
+  imagePrefix,
   index,
   sections
-}) =>
-  <Box
+}) => {
+
+  const imageCaptions = sections.reduce<string[]>((acc, val, index) => {
+    if (!!val.image && !!val.imageCaption) {
+      acc = [...acc, val.imageCaption]
+    }
+
+    return acc
+  }, [])
+
+  return <Box
     py={3}
   >
     <Heading
@@ -26,7 +37,7 @@ export const Module: React.FC<ModuleProps> = ({
       fontSize="3rem"
       display="inline-block"
     >
-      {index !== 0
+      {index !== 0 && index !== 4
         && <Text
           color={theme.colors.lightgrey}
           display="inline-block"
@@ -39,9 +50,13 @@ export const Module: React.FC<ModuleProps> = ({
       }
       {heading.toLowerCase()}</Heading>
 
-    {sections.map((section: TSection) => <Section
-      {...section}
-      index={!!index ? index + 1 : 0}
-    >
-    </Section>)}
+    {
+      sections.map((section: TSection) =>
+        <Section
+          {...section}
+          imagePrefix={imagePrefix}
+          imageSuffix={section.imageCaption ? imageCaptions.indexOf(section.imageCaption) + 1 : undefined}
+        />
+      )}
   </Box>
+}
