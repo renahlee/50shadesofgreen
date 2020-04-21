@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e169f86654544e9380c8fe5175563fae",
+    "revision": "68c8051259f9747ff577b60c0bd9133b",
     "url": "/50shadesofgreen/index.html"
   },
   {
-    "revision": "73c2d0024fd4c972ddaa",
-    "url": "/50shadesofgreen/static/css/main.655187f5.chunk.css"
+    "revision": "f11dfb163e5b6f37effd",
+    "url": "/50shadesofgreen/static/css/main.3af7fc06.chunk.css"
   },
   {
-    "revision": "9d6282310b4ff5c7133d",
-    "url": "/50shadesofgreen/static/js/2.dd4ccb98.chunk.js"
+    "revision": "c12d39ff80207ebb859c",
+    "url": "/50shadesofgreen/static/js/2.ccf32743.chunk.js"
   },
   {
     "revision": "40046c021c0025c71b5ec67323b92a85",
-    "url": "/50shadesofgreen/static/js/2.dd4ccb98.chunk.js.LICENSE.txt"
+    "url": "/50shadesofgreen/static/js/2.ccf32743.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "73c2d0024fd4c972ddaa",
-    "url": "/50shadesofgreen/static/js/main.93e4ed27.chunk.js"
+    "revision": "f11dfb163e5b6f37effd",
+    "url": "/50shadesofgreen/static/js/main.bf91c746.chunk.js"
   },
   {
     "revision": "ede66c2f25f781452cd0",
@@ -40,8 +40,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/50shadesofgreen/static/media/Figure2_3.c9d4c87e.jpg"
   },
   {
-    "revision": "55a2020b64a0dbadc0a43741ca45ab8c",
-    "url": "/50shadesofgreen/static/media/Figure2_4.55a2020b.jpg"
+    "revision": "f0c9b6e1daa03257377335948c01388f",
+    "url": "/50shadesofgreen/static/media/Figure2_4.f0c9b6e1.png"
   },
   {
     "revision": "81e06827c720fb1eb4586e32be39bc9b",
@@ -120,6 +120,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/50shadesofgreen/static/media/Figure3_29.6ad8e627.png"
   },
   {
+    "revision": "6735d5aae57d7e98e04992186fb233fd",
+    "url": "/50shadesofgreen/static/media/Figure3_3.6735d5aa.png"
+  },
+  {
     "revision": "140cd425e0c3aeb3401c3f91ce488ad2",
     "url": "/50shadesofgreen/static/media/Figure3_30.140cd425.png"
   },
@@ -134,6 +138,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "d00f8d09afe393b9506bbdce390d3b09",
     "url": "/50shadesofgreen/static/media/Figure3_4.d00f8d09.png"
+  },
+  {
+    "revision": "18ffb136bc30d87d37b602b4ad8f57de",
+    "url": "/50shadesofgreen/static/media/Figure3_5.18ffb136.png"
   },
   {
     "revision": "dc823682e4c6f09ea013856e251d5dc0",
